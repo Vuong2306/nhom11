@@ -6,16 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Colo Shop Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/bootstrap4/bootstrap.min.css">
-    <link href="~/Content/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/responsive.css">
-    <link rel="stylesheet" href="~/Content/client/plugins/fontawesome-free/css/all.min.css">
-    <link href="~/Content/PagedList.css" rel="stylesheet" />
-    <script src="~/Content/assets/js/jquery-3.2.1.min.js"></script>
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
@@ -26,121 +16,7 @@
     </style>
 </head>
 <body>
-    <div class="super_container">
-
-        <!-- Header -->
-
-        <header class="header trans_300">
-
-            <!-- Top Navigation -->
-            <!-- Top Navigation -->
-
-            <div class="top_nav">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="top_nav_left">Số điện thoại liên hệ: @SettingHelper.GetValue("SettingHotline")</div>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <div class="top_nav_right">
-                                <ul class="top_nav_menu">
-
-                                    <!-- Currency / Language / My Account -->
-                                    <!-- <li class="account">
-                                        @if (!Request.IsAuthenticated)
-                                        {
-                                            <a href="#">
-                                                Thông Tin Tài Khoản
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="account_selection">
-                                                <li><a href="/account/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Đăng nhập</a></li>
-                                                <li><a href="/account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Đăng ký</a></li>
-                                            </ul>
-                                        }
-                                        else
-                                        {
-                                            <a href="#">
-                                                Chào mừng: @User.Identity.Name
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="account_selection">
-                                                <li><a href="/"><i class="fa fa-sign-in" aria-hidden="true"></i>Hồ sơ</a></li>
-                                                <li><a href="javascript:document.getElementById('logOffForm').submit()"><i class="fa fa-user-plus" aria-hidden="true"></i> Đăng xuất</a></li>
-                                            </ul>
-                                        }
-
-                                    </li>
-                                </ul>
-
-                                @if (Request.IsAuthenticated)
-                                {
-                                    <div style="display:none">
-                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logOffForm" }))
-                                        {
-                                            @Html.AntiForgeryToken()}
-                                    </div>
-                                } -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Navigation -->
-
-            <div class="main_nav_container">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-right">
-                            <div class="logo_container">
-                                <a href="">
-                                    <span>Shop</span>
-                                </a>
-                            </div>
-                            <nav class="navbar">
-                                
-                                <ul class="navbar_user">
-                                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                    <li class="checkout">
-                                        <a href="">
-                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                            <span id="checkout_items" class="checkout_items">0</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </header>
-
-        <div class="fs_menu_overlay"></div>
-        
-
-        {% block content %}
-      
-        {% endblock %}
-
-    </div>
-    <script src="~/Content/assets/styles/bootstrap4/popper.js"></script>
-    <script src="~/Content/assets/styles/bootstrap4/bootstrap.min.js"></script>
-    <script src="~/Content/assets/plugins/Isotope/isotope.pkgd.min.js"></script>
-    <script src="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="~/Content/assets/plugins/easing/easing.js"></script>
-    <script src="~/Content/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-    <script src="~/Content/assets/js/custom.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    @*@Scripts.Render("~/bundles/bootstrap")*@
-    <script src="~/Scripts/jsShopping.js"></script>
-    @RenderSection("scripts", required: false)
+    {% content block %}
+    {% endblock %}
 </body>
 </html>
